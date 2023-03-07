@@ -8,13 +8,19 @@ const Popular = () => {
   const [popular, setPopular] = useState<Recipe[] | null>(null)
 
   const getPopular = async () => {
-    const api = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=9`
-    )
+    const check = localStorage.getItem('popular')
 
-    const data: RecipeResponse = await api.json()
+    if (check) {
+      setPopular(JSON.parse(check))
+    } else {
+      const api = await fetch(
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=9`
+      )
 
-    setPopular(data.recipes)
+      const data: RecipeResponse = await api.json()
+      setPopular(data.recipes)
+      localStorage.setItem('popular', JSON.stringify(data.recipes))
+    }
   }
 
   useEffect(() => {
