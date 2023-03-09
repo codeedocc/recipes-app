@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { Recipe, RecipeResponse } from '../models/model'
 import { Wrapper, Card, Gradient } from '../utils/styled-components'
 
-const Veggie = () => {
+const Veggie: React.FC = () => {
   const [veggie, setVeggie] = useState<Recipe[]>([])
 
   const getVeggie = async () => {

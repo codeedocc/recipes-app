@@ -4,7 +4,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { Wrapper, Card, Gradient } from '../utils/styled-components'
 import '@splidejs/splide/dist/css/splide.min.css'
 
-const Popular = () => {
+const Popular: React.FC = () => {
   const [popular, setPopular] = useState<Recipe[] | null>(null)
 
   const getPopular = async () => {

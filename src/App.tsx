@@ -1,8 +1,10 @@
+import { Category } from './components'
 import { Pages } from './pages'
 
-function App() {
+const App: React.FC = () => {
   return (
     <div>
+      <Category />
       <Pages />
     </div>
   )
