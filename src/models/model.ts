@@ -110,3 +110,17 @@ export interface Recipe {
 export interface RecipeResponse {
   recipes: Recipe[]
 }
+
+export interface Result {
+  id: number
+  title: string
+  image: string
+  imageType: string
+}
+
+export interface CuisineResponse {
+  results: Result[]
+  offset: number
+  number: number
+  totalResults: number
+}
