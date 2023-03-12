@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Recipe, RecipeResponse } from '../models/model'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { Wrapper, Card, Gradient } from '../utils/styled-components'
+import { Link } from 'react-router-dom'
 import '@splidejs/splide/dist/css/splide.min.css'
 
 const Popular: React.FC = () => {
@@ -44,11 +45,13 @@ const Popular: React.FC = () => {
           {popular?.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Card>
-                  <p>{recipe.title}</p>
-                  <img src={recipe.image} alt={recipe.title} />
-                  <Gradient />
-                </Card>
+                <Link to={'/recipe/' + recipe.id}>
+                  <Card>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <Gradient />
+                  </Card>
+                </Link>
               </SplideSlide>
             )
           })}

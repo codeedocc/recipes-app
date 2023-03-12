@@ -2,6 +2,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { useEffect, useState } from 'react'
 import { Recipe, RecipeResponse } from '../models/model'
 import { Wrapper, Card, Gradient } from '../utils/styled-components'
+import { Link } from 'react-router-dom'
 
 const Veggie: React.FC = () => {
   const [veggie, setVeggie] = useState<Recipe[]>([])
@@ -43,11 +44,13 @@ const Veggie: React.FC = () => {
           {veggie?.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Card>
-                  <p>{recipe.title}</p>
-                  <img src={recipe.image} alt={recipe.title} />
-                  <Gradient />
-                </Card>
+                <Link to={'/recipe/' + recipe.id}>
+                  <Card>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <Gradient />
+                  </Card>
+                </Link>
               </SplideSlide>
             )
           })}

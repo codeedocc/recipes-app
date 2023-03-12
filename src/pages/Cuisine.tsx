@@ -25,10 +25,12 @@ const Cuisine: React.FC = () => {
     <Grid>
       {cuisine.map((item) => {
         return (
-          <GridCard key={item.id}>
-            <img src={item.image} alt={item.title} />
-            <h4>{item.title}</h4>
-          </GridCard>
+          <Link to={'/recipe/' + item.id}>
+            <GridCard key={item.id}>
+              <img src={item.image} alt={item.title} />
+              <h4>{item.title}</h4>
+            </GridCard>
+          </Link>
         )
       })}
     </Grid>

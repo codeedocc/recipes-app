@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CuisineResponse, Result } from '../models/model'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Grid, GridCard } from '../utils/styled-components'
 
 const Searched: React.FC = () => {
@@ -24,10 +24,12 @@ const Searched: React.FC = () => {
     <Grid>
       {searchedRecipes.map((item) => {
         return (
-          <GridCard key={item.id}>
-            <img src={item.image} alt={item.title} />
-            <h4>{item.title}</h4>
-          </GridCard>
+          <Link to={'/recipe/' + item.id}>
+            <GridCard key={item.id}>
+              <img src={item.image} alt={item.title} />
+              <h4>{item.title}</h4>
+            </GridCard>
+          </Link>
         )
       })}
     </Grid>
