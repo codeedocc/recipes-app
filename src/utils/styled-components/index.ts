@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
@@ -51,7 +52,7 @@ export const List = styled.div`
   margin: 2rem 0rem;
 `
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
@@ -175,4 +176,21 @@ export const Button = styled.button`
 `
 export const Info = styled.div`
   margin-left: 10rem;
+`
+
+export const Logo = styled(Link)`
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Lobster Two', cursive;
+`
+export const Nav = styled.div`
+  padding: 4rem 0rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  svg {
+    font-size: 2rem;
+  }
 `

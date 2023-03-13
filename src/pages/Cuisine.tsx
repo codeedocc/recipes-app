@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { CuisineResponse, Result } from '../models/model'
@@ -22,7 +21,12 @@ const Cuisine: React.FC = () => {
   }, [params.type])
 
   return (
-    <Grid>
+    <Grid
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       {cuisine.map((item) => {
         return (
           <Link to={'/recipe/' + item.id}>
