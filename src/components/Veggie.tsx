@@ -44,7 +44,7 @@ const Veggie: React.FC = () => {
           {veggie?.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Link to={'/recipe/' + recipe.id}>
+                <Link to={'/recipes-app/recipe/' + recipe.id}>
                   <Card>
                     <p>{recipe.title}</p>
                     <img src={recipe.image} alt={recipe.title} />

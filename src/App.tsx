@@ -8,7 +8,7 @@ const App: React.FC = () => {
     <div>
       <Nav>
         <GiKnifeFork />
-        <Logo to={'/'}>delicious</Logo>
+        <Logo to={'/recipes-app'}>delicious</Logo>
       </Nav>
       <Search />
       <Category />

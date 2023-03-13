@@ -8,10 +8,10 @@ const Pages = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/cuisine/:type" element={<Cuisine />} />
-        <Route path="/searched/:search" element={<Searched />} />
-        <Route path="/recipe/:name" element={<RecipeCard />} />
+        <Route path="/recipes-app" element={<Home />} />
+        <Route path="/recipes-app/cuisine/:type" element={<Cuisine />} />
+        <Route path="/recipes-app/searched/:search" element={<Searched />} />
+        <Route path="/recipes-app/recipe/:name" element={<RecipeCard />} />
       </Routes>
     </AnimatePresence>
   )

@@ -29,7 +29,7 @@ const Cuisine: React.FC = () => {
     >
       {cuisine.map((item) => {
         return (
-          <Link to={'/recipe/' + item.id}>
+          <Link to={'/recipes-app/recipe/' + item.id}>
             <GridCard key={item.id}>
               <img src={item.image} alt={item.title} />
               <h4>{item.title}</h4>

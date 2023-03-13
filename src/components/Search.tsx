@@ -10,7 +10,7 @@ const Search: React.FC = () => {
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    navigate('/searched/' + input)
+    navigate('/recipes-app/searched/' + input)
   }
 
   return (
