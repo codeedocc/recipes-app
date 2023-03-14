@@ -1,38 +1,37 @@
+import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { useEffect, useState } from 'react'
 import { Recipe, RecipeResponse } from '../models/model'
-import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { Wrapper, Card, Gradient } from '../StyledComp'
 import { useScreenWidth } from '../hooks/ScreenWidth'
 import { Link } from 'react-router-dom'
-import '@splidejs/splide/dist/css/splide.min.css'
 
-const Popular: React.FC = () => {
-  const [popular, setPopular] = useState<Recipe[] | null>(null)
+const Meat: React.FC = () => {
+  const [meat, setMeat] = useState<Recipe[]>([])
 
-  const getPopular = async () => {
-    const check = localStorage.getItem('popular')
+  const getMeat = async () => {
+    const check = localStorage.getItem('meat')
 
     if (check) {
-      setPopular(JSON.parse(check))
+      setMeat(JSON.parse(check))
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=9`
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=9&tags=meat`
       )
 
       const data: RecipeResponse = await api.json()
-      setPopular(data.recipes)
-      localStorage.setItem('popular', JSON.stringify(data.recipes))
+      setMeat(data.recipes)
+      localStorage.setItem('meat', JSON.stringify(data.recipes))
     }
   }
 
   useEffect(() => {
-    getPopular()
+    getMeat()
   }, [])
 
   return (
     <div>
       <Wrapper>
-        <h3>Популярное</h3>
+        <h3>Мясное</h3>
 
         <Splide
           key={useScreenWidth()}
@@ -52,7 +51,7 @@ const Popular: React.FC = () => {
             },
           }}
         >
-          {popular?.map((recipe) => {
+          {meat?.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
                 <Link to={'/recipes-app/recipe/' + recipe.id}>
@@ -71,4 +70,4 @@ const Popular: React.FC = () => {
   )
 }
 
-export default Popular
+export default Meat

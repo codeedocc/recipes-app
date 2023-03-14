@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
-import { FormStyle } from '../utils/styled-components'
+import { FormStyle } from '../StyledComp'
 import { useNavigate } from 'react-router-dom'
 
 const Search: React.FC = () => {

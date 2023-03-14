@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { CuisineResponse, Result } from '../models/model'
 import { Link, useParams } from 'react-router-dom'
-import { Grid, GridCard } from '../utils/styled-components'
+import { Grid, GridCard } from '../StyledComp'
 
 const Searched: React.FC = () => {
   const [searchedRecipes, setSearchedRecipes] = useState<Result[]>([])

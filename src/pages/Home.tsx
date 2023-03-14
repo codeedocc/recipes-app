@@ -1,4 +1,4 @@
-import { Veggie, Popular } from '../components'
+import { Veggie, Popular, Meat, Dessert } from '../components'
 import { motion } from 'framer-motion'
 
 const Home = () => {
@@ -9,8 +9,10 @@ const Home = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Veggie />
       <Popular />
+      <Veggie />
+      <Meat />
+      <Dessert />
     </motion.div>
   )
 }

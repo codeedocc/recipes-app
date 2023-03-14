@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Recipe } from '../models/model'
-import { Button, DetailWrapper, Info } from '../utils/styled-components'
+import { Button, DetailWrapper, Info } from '../StyledComp'
 
 const RecipeCard: React.FC = () => {
   const [details, setDetails] = useState<Recipe>()
@@ -23,10 +23,8 @@ const RecipeCard: React.FC = () => {
 
   return (
     <DetailWrapper>
-      <div>
-        <h2>{details?.title}</h2>
-        <img src={details?.image} alt={details?.title} />
-      </div>
+      <h2>{details?.title}</h2>
+      <img src={details?.image} alt={details?.title} />
 
       <Info>
         <Button

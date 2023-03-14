@@ -1,6 +1,6 @@
 import { Category, Search } from './components'
 import { Pages } from './pages'
-import { Logo, Nav } from './utils/styled-components'
+import { Logo, Nav } from './StyledComp'
 import { GiKnifeFork } from 'react-icons/gi'
 
 const App: React.FC = () => {

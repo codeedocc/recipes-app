@@ -4,6 +4,13 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   margin: 4rem 0rem;
+
+  @media (max-width: 768px) {
+    h3 {
+      display: flex;
+      justify-content: center;
+    }
+  }
 `
 
 export const Card = styled.div`
@@ -54,7 +61,7 @@ export const List = styled.div`
 
 export const Grid = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 3rem;
 `
 
@@ -111,6 +118,15 @@ export const SLink = styled(NavLink)`
       color: white;
     }
   }
+
+  @media (max-width: 768px) {
+    margin-right: 0rem;
+    margin-left: 0rem;
+
+    h4 {
+      font-size: 8px;
+    }
+  }
 `
 
 export const FormStyle = styled.form`
@@ -143,9 +159,12 @@ export const FormStyle = styled.form`
   }
 `
 export const DetailWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 4rem;
   margin-bottom: 5rem;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .active {
     background: linear-gradient(35deg, #494949, #313131);
@@ -154,6 +173,7 @@ export const DetailWrapper = styled.div`
 
   h2 {
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   li {
@@ -164,6 +184,17 @@ export const DetailWrapper = styled.div`
   ul {
     margin-top: 2rem;
   }
+
+  img {
+    border-radius: 15px;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 250px;
+      height: 250px;
+    }
+  }
 `
 
 export const Button = styled.button`
@@ -171,11 +202,30 @@ export const Button = styled.button`
   color: #313131;
   background: white;
   border: 2px solid black;
-  margin-right: 2rem;
   font-weight: 600;
+  margin-top: 1rem;
 `
 export const Info = styled.div`
-  margin-left: 10rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  min-width: 100%;
+
+  li {
+    list-style: inside;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 0rem;
+
+    h3 {
+      font-size: 12px;
+    }
+
+    li {
+      font-size: 14px;
+    }
+  }
 `
 
 export const Logo = styled(Link)`

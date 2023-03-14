@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { CuisineResponse, Result } from '../models/model'
-import { Grid, GridCard } from '../utils/styled-components'
+import { Grid, GridCard } from '../StyledComp'
 
 const Cuisine: React.FC = () => {
   const [cuisine, setCuisine] = useState<Result[]>([])
@@ -9,7 +9,7 @@ const Cuisine: React.FC = () => {
 
   const getCuisine = async (name: string) => {
     const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&cuisine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&cuisine=${name}&number=15`
     )
 
     const recipes: CuisineResponse = await data.json()

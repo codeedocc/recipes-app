@@ -1,6 +1,6 @@
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa'
 import { GiNoodles, GiChopsticks } from 'react-icons/gi'
-import { List, SLink } from '../utils/styled-components'
+import { List, SLink } from '../StyledComp'
 
 const Category: React.FC = () => {
   return (

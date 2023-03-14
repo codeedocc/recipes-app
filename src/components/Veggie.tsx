@@ -1,7 +1,8 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { useEffect, useState } from 'react'
 import { Recipe, RecipeResponse } from '../models/model'
-import { Wrapper, Card, Gradient } from '../utils/styled-components'
+import { Wrapper, Card, Gradient } from '../StyledComp'
+import { useScreenWidth } from '../hooks/ScreenWidth'
 import { Link } from 'react-router-dom'
 
 const Veggie: React.FC = () => {
@@ -30,15 +31,25 @@ const Veggie: React.FC = () => {
   return (
     <div>
       <Wrapper>
-        <h3>Для вегетарианцев</h3>
+        <h3>Вегетарианское</h3>
 
         <Splide
+          key={useScreenWidth()}
           options={{
-            perPage: 3,
+            perPage: 4,
             arrows: false,
             pagination: false,
             drag: 'free',
             gap: '5rem',
+            breakpoints: {
+              1200: {
+                perPage: 3,
+                gap: '2rem',
+              },
+              768: {
+                perPage: 1,
+              },
+            },
           }}
         >
           {veggie?.map((recipe) => {
